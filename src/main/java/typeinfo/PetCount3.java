@@ -10,6 +10,8 @@ public class PetCount3 {
   static class PetCounter
   extends LinkedHashMap<Class<? extends Pet>,Integer> {
     public PetCounter() {
+      //预加载LiteralPetCreator.allTypes中的类型
+      //MapData.map(LiteralPetCreator.allTypes, 0)用allTypes中的元素作为建，0作为值填充Map
       super(MapData.map(LiteralPetCreator.allTypes, 0));
     }
     public void count(Pet pet) {
